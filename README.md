@@ -1,0 +1,2 @@
+# RIDIT
+RIDIT - Chrome Extension
