@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "@src/App";
+import Window from "@src/pages/window";
 
-ReactDOM.render(<App />, document.getElementById("window-root"));
+ReactDOM.render(<Window />, document.getElementById("window-root"));
