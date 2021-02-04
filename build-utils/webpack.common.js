@@ -24,6 +24,22 @@ module.exports = {
     background: [path.join(commonPaths.extensionPath, "background")],
     content: [path.join(commonPaths.extensionPath, "content")],
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    hot: true,
+    compress: true,
+    overlay: true,
+    port: 8008,
+    stats: "errors-only",
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: "/window.html" },
+        { from: /^\/popup/, to: "/popup.html" },
+        { from: /^\/content/, to: "/content.html" },
+      ],
+    },
+    open: true,
+  },
   output: {
     path: path.join(__dirname, "../dist"),
     filename: "js/[name].bundle.js",
