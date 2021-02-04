@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack -w --env.env=dev",
-    "start:dev":  "webpack-dev-server --hot --env.env=dev",
+    "start:dev": "webpack-dev-server --hot --env.env=dev",
     "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
     "clean": "rimraf dist"
   },
