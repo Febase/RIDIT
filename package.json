@@ -10,12 +10,13 @@
     "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
     "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "clean": "rimraf dist",
-    "watch" : "watch 'yarn run build:style' ./src"
+    "watch": "watch 'yarn run build:style' ./src"
   },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
