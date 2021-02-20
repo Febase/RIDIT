@@ -9,12 +9,12 @@ const Contents = () => {
   }
   return (
     <>
-      <div className="h-14 w-full px-6 flex justify-between items-center bg-white">
+      <div className="h-14 w-full px-6 flex justify-between items-center bg-white dark:bg-gray-900">
 
         {/* 좌측 탭 영역 */}
         <ul className="flex list-none ">
           <li 
-            className={"h-8 leading-8 px-4 rounded-lg text-base cursor-pointer " 
+            className={"h-8 leading-8 px-4 rounded-lg text-base font-medium cursor-pointer " 
             + (activeTab === 1 ? "text-purple bg-purple-light" : "text-gray-300")}
             onClick={e => {
               e.preventDefault()
@@ -22,15 +22,15 @@ const Contents = () => {
             }}
           >Reading List</li>
           <li 
-            className={"h-8 leading-8 px-4 rounded-lg text-base cursor-pointer " 
-            + (activeTab === 2 ? "text-purple bg-purple-light" : "text-gray-300")}
+            className={"h-8 leading-8 px-4 rounded-lg text-base font-medium cursor-pointer " 
+            + (activeTab === 2 ? "text-purple bg-purple-light " : "text-gray-300")}
             onClick={e => {
               e.preventDefault()
               setActiveTab(2)
             }}
           >recently Added</li>
           <li 
-            className={"h-8 leading-8 px-4 rounded-lg text-base cursor-pointer " 
+            className={"h-8 leading-8 px-4 rounded-lg text-base font-medium cursor-pointer " 
             + (activeTab === 3 ? "text-purple bg-purple-light" : "text-gray-300")}
             onClick={e => {
               e.preventDefault()
@@ -43,25 +43,24 @@ const Contents = () => {
         <ul className="flex list-none">
           <li 
             id="btn-search" 
-            className="h-8 w-8 rounded-lg bg-purple-200 cursor-not-allowed"
+            className="h-8 w-8 rounded-lg bg-purple-light cursor-not-allowed"
             onClick={showAlert}>
           </li>
           <li id="btn-sort" 
-            className="h-8 w-8 ml-2.5 rounded-lg bg-purple-200 cursor-not-allowed" 
+            className="h-8 w-8 ml-2.5 rounded-lg bg-purple-light cursor-not-allowed" 
             onClick={showAlert}>
           </li>
           <li i
             d="btn-setting" 
-            className="h-8 w-8 ml-2.5  rounded-lg bg-purple-200 cursor-not-allowed" 
+            className="h-8 w-8 ml-2.5  rounded-lg bg-purple-light cursor-not-allowed" 
             onClick={showAlert}>
           </li>
         </ul>
       </div>
 
       {/* 컨텐츠 영역 */}
-      <div className="bg-gray-100 h-content fas fa-cog">
-        <div className="flex">
-          <Card />
+      <div className="h-content bg-gray-100 dark:bg-gray-800">
+        <div className="flex justify-center">
           <Card />
           <Card />
           <Card />

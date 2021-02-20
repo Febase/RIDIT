@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        'content': 'calc(100vh - 8rem)',
+        'content': 'calc(100vh - 7rem)',
       },
       colors: {
         purple: {
@@ -29,7 +29,7 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.trueGray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,

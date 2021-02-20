@@ -10,7 +10,7 @@ const reloadPage = () => {
 }
 
 const Header = () => (
-  <header className="h-14 bg-white sticky text-center border-b border-ededed ">
+  <header className="h-14 sticky text-center border-b border-ededed bg-white dark:bg-gray-900 dark:border-gray-800">
     <h1 id="logo-top" className="h-8"onClick={reloadPage}></h1>
   </header>
 )
