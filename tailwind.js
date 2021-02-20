@@ -5,6 +5,17 @@ module.exports = {
   presets: [],
   darkMode: 'media', 
   theme: {
+    extend: {
+      height: {
+        'content': 'calc(100vh - 8rem)',
+      },
+      colors: {
+        purple: {
+          light: '#D3D1E6',
+          DEFAULT: '#514A9D',
+        },
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -24,7 +35,7 @@ module.exports = {
       green: colors.emerald,
       blue: colors.blue,
       indigo: colors.indigo,
-      purple: colors.violet,
+      // purple: colors.violet,
       pink: colors.pink,
     },
     spacing: {

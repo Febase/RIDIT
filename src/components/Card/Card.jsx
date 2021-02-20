@@ -7,7 +7,6 @@ const Card = ({ title, paragraph, url }) => (
     <div className="flex">
       <p className="py-2 px-8">{paragraph}</p>
     </div>
-    
   </a>
 );
 
