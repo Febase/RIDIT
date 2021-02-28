@@ -60,7 +60,8 @@ const Contents = () => {
 
       {/* 컨텐츠 영역 */}
       <div className="h-content bg-gray-100 dark:bg-gray-800">
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center max-w-screen-2xl mx-auto">
+          <Card />
           <Card />
           <Card />
           <Card />
