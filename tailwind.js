@@ -110,6 +110,7 @@ module.exports = {
       auto: 'auto',
       cover: 'cover',
       contain: 'contain',
+      '16px': '1rem',
     },
     borderColor: (theme) => ({
       ...theme('colors'),
