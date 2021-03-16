@@ -1,5 +1,6 @@
 import React from "react";
 import "@src/styles/tailwind.css"
+
 const PopupPage = () => {
   return (
     <div>
