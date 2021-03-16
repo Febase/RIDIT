@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import Header from './Header';
 import Input from './Input';
 import ListBtn from './ListBtn';
@@ -10,6 +10,7 @@ function Sidebar() {
       <Header />
       <Input />
       <ListBtn />
+      <Directories />
     </div>
   );
 }

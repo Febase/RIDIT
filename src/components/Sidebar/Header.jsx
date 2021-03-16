@@ -2,18 +2,16 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className="flex items-center p-4">
-      <img
-        className="bg-no-repeat bg-contain h-8"
+    <header className="flex items-center p-4">
+      <div
+        className="bg-no-repeat bg-contain w-36 h-8 flex-1"
         style={{ backgroundImage: 'url(/img/logo_main.png)' }}
-        width="90%"
       />
-      <img
-        className="bg-no-repeat h-8"
+      <div
+        className="bg-no-repeat w-6 h-6"
         style={{ backgroundImage: 'url(/img/left_arrow.png)' }}
-        width="10%"
       />
-    </div>
+    </header>
   );
 }
 
