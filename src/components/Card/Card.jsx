@@ -11,8 +11,8 @@ const Card = ({ title, source, paragraph, url }) => (
     </div>
     <h2 style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}} className="font-medium overflow-ellipsis overflow-hidden break-words dark:text-white" href={url}>제목임{title}</h2>
     <div>
-      <div class="rounded bg-center bg-cover"></div>
-      <p class="text-gray-300 text-xs">Medium{source}</p>
+      <div className="rounded bg-center bg-cover"></div>
+      <p className="text-gray-300 text-xs">Medium{source}</p>
     </div>
     <div className="w-full h-24 rounded-lg bg-center bg-cover absolute bottom-0 left-0  py-2.5 px-3">
     </div>
