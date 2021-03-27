@@ -3,8 +3,19 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: [],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', 
   theme: {
+    extend: {
+      height: {
+        'content': 'calc(100vh - 7rem)',
+      },
+      colors: {
+        purple: {
+          light: '#D3D1E6',
+          DEFAULT: '#514A9D',
+        },
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -18,13 +29,13 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.trueGray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,
       indigo: colors.indigo,
-      purple: colors.violet,
+      // purple: colors.violet,
       pink: colors.pink,
     },
     spacing: {
@@ -99,6 +110,7 @@ module.exports = {
       auto: 'auto',
       cover: 'cover',
       contain: 'contain',
+      '16px': '1rem',
     },
     borderColor: (theme) => ({
       ...theme('colors'),
