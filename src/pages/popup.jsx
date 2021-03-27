@@ -19,6 +19,7 @@ const PopupPage = () => {
       {'title': titleRef.current.value, 'url': urlRef.current.value},
       function(target) {
         console.log(target);
+        window.close();
       },
     );
   }
