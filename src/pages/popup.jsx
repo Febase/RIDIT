@@ -43,7 +43,7 @@ const PopupPage = () => {
       <input className="w-full border my-1 p-1" placeholder="Url" ref={urlRef} defaultValue={url} onChange={onUrlChanged}/>
       <select className="w-full border my-1 p-1" name="folders" id="bookmark-folders">
         {
-          bookmarkFolders.map((value) => <option value={value.title}>{value.title}</option>)
+          bookmarkFolders.map(({title, id}) => <option value={title} id={id}>{title}</option>)
         }
       </select>
       <button className="w-full text-purple bg-purple-light rounded mt-2 py-1" onClick={SaveBookMarkClicked}>SAVE IT</button>
