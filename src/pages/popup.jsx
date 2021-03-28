@@ -4,6 +4,8 @@ import "@src/styles/tailwind.css"
 const PopupPage = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const titleRef = React.createRef("");
+  const urlRef = React.createRef("");
 
   useEffect(()=>{
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
@@ -14,19 +16,27 @@ const PopupPage = () => {
 
   const SaveBookMarkClicked = () => {
     chrome.bookmarks.create(
-      {'title': title, 'url': url},
+      {'title': titleRef.current.value, 'url': urlRef.current.value},
       function(target) {
         console.log(target);
+        window.close();
       },
     );
   }
 
+  const onTitleChanged = (e) => {
+    setTitle(titleRef.current.value);
+  }
+
+  const onUrlChanged = (e) => {
+    setUrl(urlRef.current.value);
+  }
+
   return (
-    <div className="m-2" style={{width: "200px"}}>
-      <h1>Popup Page</h1>
-      <input className="w-full border my-1" placeholder="Title" defaultValue={title}/>
-      <input className="w-full border my-1" placeholder="Url" defaultValue={url}/>
-      <button className="w-full text-purple bg-purple-light rounded mt-2" onClick={SaveBookMarkClicked}>SAVE IT</button>
+    <div className="m-2" style={{width: "250px"}}>
+      <input className="w-full border my-1 p-1" placeholder="Title" ref={titleRef} defaultValue={title} onChange={onTitleChanged}/>
+      <input className="w-full border my-1 p-1" placeholder="Url" ref={urlRef} defaultValue={url} onChange={onUrlChanged}/>
+      <button className="w-full text-purple bg-purple-light rounded mt-2 py-1" onClick={SaveBookMarkClicked}>SAVE IT</button>
     </div>
   );
 };
