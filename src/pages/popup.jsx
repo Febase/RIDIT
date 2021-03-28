@@ -24,13 +24,8 @@ const PopupPage = () => {
     );
   }
 
-  const onTitleChanged = (e) => {
-    setTitle(titleRef.current.value);
-  }
-
-  const onUrlChanged = (e) => {
-    setUrl(urlRef.current.value);
-  }
+  const onTitleChanged = () => setTitle(titleRef.current.value);
+  const onUrlChanged = () => setUrl(urlRef.current.value);
 
   return (
     <div className="m-2" style={{width: "250px"}}>
