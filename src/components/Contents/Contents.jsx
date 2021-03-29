@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "@src/styles/tailwind.css"
-import Card from "../Card/Card";
+import CardWrap from "../CardWrap/CardWrap";
+import { Result } from "postcss";
 
 const showAlert = () => {
   alert('🚧 Under construction 🚧')
@@ -61,9 +62,9 @@ const Contents = ({foo}) => {
       {/* 컨텐츠 영역 */}
       <div className="h-content bg-gray-100 overflow-y-auto dark:bg-gray-800">
         <div className="grid gap-4 place-items-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-          {activeTab === 1 && <Card title="1" />}
-          {activeTab === 2 && <Card title="2" />}
-          {activeTab === 3 && <Card title="3" />}
+          {activeTab === 1 && <CardWrap tab={1}/>}
+          {activeTab === 2 && <CardWrap tab={2}/>}
+          {activeTab === 3 && <CardWrap tab={3}/>}
         </div>
       </div>
     </>)

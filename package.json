@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack -w --env.env=dev",
-    "start:dev": "yarn build:style && webpack-dev-server --hot --env.env=dev",
+    "start:dev": "yarn build:style && webpack-dev-server --env.env=dev",
     "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
     "build:style": "postcss src/styles/index.css -o src/styles/tailwind.css",
     "clean": "rimraf dist",
