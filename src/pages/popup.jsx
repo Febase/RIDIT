@@ -52,14 +52,23 @@ const PopupPage = () => {
 
   return (
     <div className="m-2" style={{width: "300px"}}>
-      <input className="w-full border my-1 p-1" placeholder="Title" ref={titleRef} defaultValue={title} onChange={onTitleChanged}/>
-      <input className="w-full border my-1 p-1" placeholder="Url" ref={urlRef} defaultValue={url} onChange={onUrlChanged}/>
-      <select className="w-full border my-1 p-1" name="folders" id="bookmark-folders" onChange={onSelectedFolderChange}>
-        {
-          bookmarkFolders.map(({title, id}) => <option value={title} key={id}>{title}</option>)
-        }
-      </select>
-      <button className="w-full text-purple bg-purple-light rounded mt-2 py-1" onClick={SaveBookMarkClicked}>SAVE IT</button>
+      <div className="w-full">
+        <p className="px-2 w-1/5 inline-flex text-center">Title</p>
+        <input className="w-4/5 border my-1 p-1 justify-self-end" placeholder="Title" ref={titleRef} defaultValue={title} onChange={onTitleChanged}/>
+      </div>
+      <div className="w-full">
+        <span className="px-2 w-1/5 inline-flex text-center">Url</span>
+        <input className="w-4/5 border my-1 p-1" placeholder="Url" ref={urlRef} defaultValue={url} onChange={onUrlChanged}/>
+      </div>
+      <div className="w-full">
+        <span className="px-2 w-1/5 inline-flex text-center">Folder</span>
+        <select className="w-4/5 border my-1 p-1" name="folders" id="bookmark-folders" onChange={onSelectedFolderChange}>
+          {
+            bookmarkFolders.map(({title, id}) => <option value={title} key={id}>{title}</option>)
+          }
+        </select>
+      </div>
+      <button className="w-full text-purple bg-purple-light rounded mt-3 py-1.5" onClick={SaveBookMarkClicked}>SAVE IT</button>
     </div>
   );
 };
