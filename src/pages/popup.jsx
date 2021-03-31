@@ -15,6 +15,7 @@ const flat = (array) => {
 const PopupPage = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const [selectedFolderID, setSelectedFolderID] = useState(1);
   const [bookmarkFolders, setBookmarkFolders] = useState([]);
   const titleRef = React.createRef("");
   const urlRef = React.createRef("");
@@ -34,7 +35,7 @@ const PopupPage = () => {
 
   const SaveBookMarkClicked = () => {
     chrome.bookmarks.create(
-      {'title': titleRef.current.value, 'url': urlRef.current.value},
+      {'title': titleRef.current.value, 'url': urlRef.current.value, 'parentId': selectedFolderID},
       function(target) {
         console.log(target);
         window.close();
@@ -44,14 +45,18 @@ const PopupPage = () => {
 
   const onTitleChanged = () => setTitle(titleRef.current.value);
   const onUrlChanged = () => setUrl(urlRef.current.value);
+  const onSelectedFolderChange = ({target}) => {
+    const optionElement = target.childNodes[target.selectedIndex]
+    setSelectedFolderID(optionElement.getAttribute('key'));
+  }
 
   return (
-    <div className="m-2" style={{width: "250px"}}>
+    <div className="m-2" style={{width: "300px"}}>
       <input className="w-full border my-1 p-1" placeholder="Title" ref={titleRef} defaultValue={title} onChange={onTitleChanged}/>
       <input className="w-full border my-1 p-1" placeholder="Url" ref={urlRef} defaultValue={url} onChange={onUrlChanged}/>
-      <select className="w-full border my-1 p-1" name="folders" id="bookmark-folders">
+      <select className="w-full border my-1 p-1" name="folders" id="bookmark-folders" onChange={onSelectedFolderChange}>
         {
-          bookmarkFolders.map(({title, id}) => <option value={title} id={id}>{title}</option>)
+          bookmarkFolders.map(({title, id}) => <option value={title} key={id}>{title}</option>)
         }
       </select>
       <button className="w-full text-purple bg-purple-light rounded mt-2 py-1" onClick={SaveBookMarkClicked}>SAVE IT</button>
