@@ -8,7 +8,7 @@ const WindowPage = () => {
 
   return (
     <div className="h-screen">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Header />
       <Contents />
     </div>
