@@ -60,7 +60,7 @@ const Contents = ({foo}) => {
 
       {/* 컨텐츠 영역 */}
       <div className="h-content bg-gray-100 overflow-y-auto dark:bg-gray-800">
-        <div className="flex flex-none flex-wrap max-w-6xl mx-auto">
+        <div className="flex flex-none flex-wrap justify-center max-w-6xl mx-auto">
           {activeTab === 1 && <CardWrap tab={1}/>}
           {activeTab === 2 && <CardWrap tab={2}/>}
           {activeTab === 3 && <CardWrap tab={3}/>}
