@@ -25,7 +25,6 @@ const Contents = ({foo}) => {
   return (
     <>
       <div className="h-14 w-full px-6 flex justify-between items-center bg-white dark:bg-gray-900">
-
         {/* 좌측 탭 영역 */}
         <ul className="flex list-none ">
           {tabItems.map(item => {

@@ -9,7 +9,7 @@
     "48": "img/icon-48.png",
     "128": "img/icon-128.png"
   },
-  "permissions": ["activeTab", "bookmarks", "tabs"],
+  "permissions": ["activeTab", "storage", "bookmarks", "tabs"],
   "chrome_url_overrides": {
     "newtab": "window.html"
   },
