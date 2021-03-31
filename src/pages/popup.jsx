@@ -46,8 +46,8 @@ const PopupPage = () => {
   const onTitleChanged = () => setTitle(titleRef.current.value);
   const onUrlChanged = () => setUrl(urlRef.current.value);
   const onSelectedFolderChange = ({target}) => {
-    const optionElement = target.childNodes[target.selectedIndex]
-    setSelectedFolderID(optionElement.getAttribute('key'));
+    const optionElement = target.childNodes[target.selectedIndex];
+    setSelectedFolderID(optionElement.getAttribute('id'));
   }
 
   return (
@@ -64,7 +64,7 @@ const PopupPage = () => {
         <span className="px-2 w-1/5 inline-flex text-center">Folder</span>
         <select className="w-4/5 border my-1 p-1" name="folders" id="bookmark-folders" onChange={onSelectedFolderChange}>
           {
-            bookmarkFolders.map(({title, id}) => <option value={title} key={id}>{title}</option>)
+            bookmarkFolders.map(({title, id}) => <option value={title} key={id} id={id}>{title}</option>)
           }
         </select>
       </div>
