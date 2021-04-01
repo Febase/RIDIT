@@ -9,8 +9,8 @@ const WindowPage = () => {
   return (
     <div className="h-screen">
       <Sidebar />
-      <Header />
-      <Contents />
+      {/* <Header />
+      <Contents /> */}
     </div>
   );
 };

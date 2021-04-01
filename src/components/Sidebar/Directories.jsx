@@ -18,26 +18,26 @@ function Directory ({
   bookmark,
 }) {
   return (
-    <li>
-      <div className="flex">
+    <li className="flex items-center mb-0.5">
+      <div className="flex flex-1 items-center">
         <div
-          className="bg-no-repeat w-5 h-5"
-          style={{ backgroundImage: 'url(/img/right_arrow.png' }}
+          className="bg-no-repeat w-1.5 h-2 bg-contain bg-center mr-2"
+          style={{ backgroundImage: 'url(/img/right-arrow.png' }}
         />
         <div
-          className="bg-no-repeat w-5 h-5"
+          className="bg-no-repeat w-6 h-6 bg-contain bg-center"
           style={{ backgroundImage: 'url(/img/folder.png' }}
         />
         <div>{name}</div>
       </div>
-      <div className="h-5 w-5" style={{ backgroundImage: 'url(/img/dots_vertical)' }} />
+      <div className="h-4 bg-contain w-1 bg-center bg-no-repeat" style={{ backgroundImage: 'url(/img/dots-vertical.png)' }} />
     </li>
   )
 };
 
 function Directories () {
   return (
-    <ul className="">
+    <ul className="px-4 py-2">
       {data.map(directory => <Directory key={directory.name} {...directory} />)}
     </ul>
   )

@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ListBtn() {
+function ListBtn () {
   return (
-    <div className="p-4 flex">
+    <div className="px-4 py-2 flex">
       <button
         className="w-36 h-8 bg-purple-800 text-sm rounded-l-lg outline-none"
         style={{ backgroundColor: '#514A9D', color: '#ffffff' }}
