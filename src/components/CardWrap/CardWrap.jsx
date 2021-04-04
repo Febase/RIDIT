@@ -15,8 +15,6 @@ const flat = (array) => {
 
 const CardWrap = ({tab}) => {
 	const [bookmarks, setBookmarks] = useState([]);
-	const [random, setRandom] = useState([]);
-	const [recent, setRecent] = useState([]);
 	useEffect(()=>{
 		if(tab == 1) {
 			chrome.bookmarks.getTree((tree) => {
@@ -30,26 +28,19 @@ const CardWrap = ({tab}) => {
 					selectedBookmarks.push(allBookmarks[Math.floor(Math.random() * allBookmarks.length)]);
 					n++
 				}
-				setRandom(selectedBookmarks);
+				setBookmarks(selectedBookmarks);
 			})
-			setBookmarks(random);
-			console.log('random', random);
-			console.log(bookmarks);
 		}
 		if(tab == 2) {
 			chrome.bookmarks.getRecent(12, result => {
-				setRecent(result);
+				setBookmarks(result);
 			})
-			setBookmarks(recent);
-			console.log('recent', recent);
-			console.log(bookmarks);
 		}
 
   },[])
 
 	return (
 		<>
-			
 			{
 				bookmarks.length > 0 &&
 				bookmarks.map((bookmark) => {
